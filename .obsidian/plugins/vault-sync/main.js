@@ -105,8 +105,12 @@ class VaultSyncSettingTab extends PluginSettingTab {
       );
 
     new Setting(containerEl)
-      .setName("Branch")
-      .setDesc("Branch name to push/pull.")
+      .setName("Branch (fallback)")
+      .setDesc(
+        "Push/pull always uses the repo's actual current branch automatically (e.g. 'master' vs 'main' - whatever " +
+          "git actually created). This is only used as a fallback when that can't be detected, such as before your " +
+          "first commit."
+      )
       .addText((t) =>
         t.setValue(this.plugin.settings.branch).onChange(async (v) => {
           this.plugin.settings.branch = v.trim() || "main";
@@ -330,6 +334,17 @@ module.exports = class VaultSyncPlugin extends Plugin {
     return res.ok && res.stdout.trim().length > 0;
   }
 
+  // Uses the repo's actual current branch (e.g. "master" vs "main" depending
+  // on git version/config) rather than assuming a name - that mismatch is
+  // exactly what causes a "src refspec ... does not match any" push failure.
+  // Falls back to the settings value only if detection fails, e.g. before
+  // the first commit exists (a fresh repo has no current branch yet).
+  async getCurrentBranch() {
+    const res = await runGit(this.vaultPath, ["branch", "--show-current"], 5000);
+    const detected = res.ok ? res.stdout.trim() : "";
+    return detected || this.settings.branch || "main";
+  }
+
   async writeDefaultGitignore() {
     const giPath = path.join(this.vaultPath, ".gitignore");
     if (fs.existsSync(giPath)) return;
@@ -441,7 +456,7 @@ module.exports = class VaultSyncPlugin extends Plugin {
       if (!quiet) new Notice("You have uncommitted changes - commit first, then pull");
       return false;
     }
-    const branch = this.settings.branch || "main";
+    const branch = await this.getCurrentBranch();
     const pull = await runGit(this.vaultPath, ["pull", "origin", branch], 60000);
     if (!pull.ok) {
       this.reportError("Pull failed (check for merge conflicts)", pull);
@@ -462,7 +477,7 @@ module.exports = class VaultSyncPlugin extends Plugin {
       if (!quiet) new Notice("No remote configured - set one in Vault Sync settings");
       return false;
     }
-    const branch = this.settings.branch || "main";
+    const branch = await this.getCurrentBranch();
     const push = await runGit(this.vaultPath, ["push", "-u", "origin", branch], 60000);
     if (!push.ok) {
       this.reportError("Push failed", push);
