@@ -1,0 +1,9 @@
+{
+  "id": "note-flashcards",
+  "name": "Note Flashcards",
+  "version": "2.8.1",
+  "minAppVersion": "1.0.0",
+  "description": "Turn selections from your notes into question/answer flashcards saved as their own notes in a folder you choose, with a customizable spaced-repetition review view. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
+  "author": "warch",
+  "isDesktopOnly": false
+}

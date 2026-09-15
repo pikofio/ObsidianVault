@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "cardsFolder": "Flashcards",
+    "folderFilter": [],
+    "newCardsPerDay": 20,
+    "intervals": {
+      "again": 0.007,
+      "hard": 1,
+      "good": 3,
+      "easy": 7
+    },
+    "easeStart": 2.5,
+    "easeMin": 1.3,
+    "showBlockIds": false
+  },
+  "cards": []
+}

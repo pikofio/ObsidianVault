@@ -1,0 +1,142 @@
+{
+  "tablePrefix": "t",
+  "lastHeadingLevel": 2,
+  "linkBlacklistFolders": [
+    "Flashcards"
+  ],
+  "snippets": [
+    {
+      "id": "tip",
+      "trigger": "t",
+      "label": "Tip callout",
+      "type": "callout",
+      "value": "tip"
+    },
+    {
+      "id": "question",
+      "trigger": "q",
+      "label": "Question callout",
+      "type": "callout",
+      "value": "question"
+    },
+    {
+      "id": "note",
+      "trigger": "n",
+      "label": "Note callout",
+      "type": "callout",
+      "value": "note"
+    },
+    {
+      "id": "warning",
+      "trigger": "w",
+      "label": "Warning callout",
+      "type": "callout",
+      "value": "warning"
+    },
+    {
+      "id": "h1",
+      "trigger": "1",
+      "label": "Heading 1",
+      "type": "heading",
+      "value": 1
+    },
+    {
+      "id": "h2",
+      "trigger": "2",
+      "label": "Heading 2",
+      "type": "heading",
+      "value": 2
+    },
+    {
+      "id": "h3",
+      "trigger": "3",
+      "label": "Heading 3",
+      "type": "heading",
+      "value": 3
+    },
+    {
+      "id": "h4",
+      "trigger": "4",
+      "label": "Heading 4",
+      "type": "heading",
+      "value": 4
+    },
+    {
+      "id": "h5",
+      "trigger": "5",
+      "label": "Heading 5",
+      "type": "heading",
+      "value": 5
+    },
+    {
+      "id": "h6",
+      "trigger": "6",
+      "label": "Heading 6",
+      "type": "heading",
+      "value": 6
+    },
+    {
+      "id": "last-heading",
+      "trigger": "0",
+      "label": "Last used heading",
+      "type": "last-heading",
+      "value": null
+    },
+    {
+      "id": "bullet",
+      "trigger": "b",
+      "label": "Bullet list",
+      "type": "list",
+      "value": "- "
+    },
+    {
+      "id": "ordered",
+      "trigger": "o",
+      "label": "Numbered list",
+      "type": "list",
+      "value": "1. "
+    },
+    {
+      "id": "checkbox",
+      "trigger": "c",
+      "label": "Checkbox list",
+      "type": "list",
+      "value": "- [ ] "
+    },
+    {
+      "id": "mdlink",
+      "trigger": "l",
+      "label": "Link",
+      "type": "template",
+      "value": "[{{cursor}}]()"
+    },
+    {
+      "id": "wikilink",
+      "trigger": "wl",
+      "label": "Link to heading",
+      "type": "heading-link",
+      "value": null
+    },
+    {
+      "id": "embed",
+      "trigger": "e",
+      "label": "Embed",
+      "type": "template",
+      "value": "![[{{cursor}}]]"
+    },
+    {
+      "id": "image",
+      "trigger": "i",
+      "label": "Image",
+      "type": "template",
+      "value": "![{{cursor}}]()"
+    },
+    {
+      "id": "filelink",
+      "trigger": "f",
+      "label": "File link",
+      "type": "template",
+      "value": "[[{{cursor}}]]"
+    }
+  ]
+}

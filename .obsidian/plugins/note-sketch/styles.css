@@ -1,0 +1,97 @@
+.nsk-block {
+  margin: 0.5em 0;
+}
+
+.nsk-display {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.nsk-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nsk-edit-btn {
+  margin-top: 6px;
+  font-size: 0.8em;
+}
+
+.nsk-placeholder {
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: var(--background-secondary);
+}
+
+.nsk-placeholder:hover {
+  background: var(--background-modifier-hover);
+}
+
+.nsk-modal-el {
+  width: fit-content;
+  max-width: 95vw;
+}
+
+.nsk-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.nsk-color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nsk-color-btn.nsk-active {
+  border-color: var(--text-normal);
+}
+
+.nsk-toolbar button.nsk-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.nsk-size-select {
+  font-size: 0.85em;
+}
+
+.nsk-canvas-wrap {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 0;
+}
+
+.nsk-canvas {
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+  max-width: 90vw;
+  max-height: 70vh;
+}
+
+.nsk-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.nsk-save-btn {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}

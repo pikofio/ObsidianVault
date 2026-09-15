@@ -1,0 +1,8 @@
+{
+  "remoteUrl": "git@github.com:pikofio/ObsidianVault.git",
+  "branch": "main",
+  "authorName": "warch",
+  "authorEmail": "warcholek.tom@seznam.cz",
+  "syncOnSave": false,
+  "syncOnSaveDelay": 60
+}
