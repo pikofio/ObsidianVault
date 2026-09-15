@@ -1,0 +1,16 @@
+.math-snippet-suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.math-snippet-suggestion-trigger {
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+.math-snippet-row .setting-item-control {
+  flex-wrap: wrap;
+  gap: 4px;
+}

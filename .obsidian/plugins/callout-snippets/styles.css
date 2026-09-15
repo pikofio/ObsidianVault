@@ -1,0 +1,16 @@
+.callout-snippet-suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.callout-snippet-suggestion-trigger {
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+.callout-snippet-row .setting-item-control {
+  flex-wrap: wrap;
+  gap: 4px;
+}

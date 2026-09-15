@@ -1,0 +1,9 @@
+{
+  "id": "callout-snippets",
+  "name": "Callout Snippets",
+  "version": "2.9.0",
+  "minAppVersion": "1.0.0",
+  "description": "Type ; to search and insert callouts, headings, lists, tables and links (vault-wide heading search included); type ;; to repeat the last one. Configurable in settings. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
+  "author": "warch",
+  "isDesktopOnly": false
+}

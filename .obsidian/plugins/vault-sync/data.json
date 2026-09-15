@@ -1,0 +1,9 @@
+{
+  "remoteUrl": "git@github.com:pikofio/ObsidianVault.git",
+  "branch": "main",
+  "authorName": "warch",
+  "authorEmail": "warcholek.tom@seznam.cz",
+  "sshKeyPath": "/home/warch/.ssh/id_ed25519",
+  "syncOnSave": false,
+  "syncOnSaveDelay": 60
+}

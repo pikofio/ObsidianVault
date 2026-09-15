@@ -1,0 +1,9 @@
+{
+  "id": "note-sketch",
+  "name": "Note Sketch",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Freehand-draw directly into your notes via a ```draw code block — click to sketch, saved as its own file and rendered inline. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
+  "author": "warch",
+  "isDesktopOnly": false
+}

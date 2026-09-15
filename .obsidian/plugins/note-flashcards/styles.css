@@ -1,0 +1,297 @@
+.nfc-create-view,
+.nfc-review-view {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nfc-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nfc-header-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nfc-file-label {
+  font-weight: 600;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+.nfc-hint {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.nfc-source {
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.nfc-btn-row,
+.nfc-save-row {
+  display: flex;
+  gap: 6px;
+}
+
+.nfc-mark-btn {
+  flex: 1;
+}
+
+.nfc-preview {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  min-height: 32px;
+}
+
+.nfc-preview-label {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.nfc-save-btn {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.nfc-list {
+  margin-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  padding-top: 8px;
+}
+
+.nfc-empty {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.nfc-browse-header h4 {
+  margin-bottom: 4px;
+}
+
+.nfc-browse-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.nfc-search-input {
+  flex: 1;
+  font-size: 0.85em;
+}
+
+.nfc-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.nfc-card-row-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.nfc-card-row-q {
+  font-size: 0.85em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nfc-card-row-source {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nfc-card-row-btns {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.nfc-del-btn {
+  font-size: 0.75em;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.nfc-review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nfc-review-top-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.nfc-progress {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.nfc-filter-summary {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
+.nfc-filter-modal {
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nfc-tree {
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin: 8px 0;
+}
+
+.nfc-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.nfc-tree-folder {
+  font-weight: 600;
+}
+
+.nfc-tree-note {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+.nfc-filter-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.nfc-edit-modal label {
+  display: block;
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.nfc-edit-textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  font-family: inherit;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.nfc-review-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 16px;
+  min-height: 120px;
+}
+
+.nfc-review-answer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--background-modifier-border);
+}
+
+.nfc-review-note {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.nfc-review-note-label {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.nfc-review-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nfc-show-btn {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.nfc-grade-row {
+  display: flex;
+  gap: 6px;
+}
+
+.nfc-grade-btn {
+  flex: 1;
+}
+
+.nfc-grade-again {
+  background: #e03131;
+  color: white;
+}
+
+.nfc-grade-hard {
+  background: #f08c00;
+  color: white;
+}
+
+.nfc-grade-good {
+  background: #2f9e44;
+  color: white;
+}
+
+.nfc-grade-easy {
+  background: #1971c2;
+  color: white;
+}
+
+.nfc-open-row {
+  display: flex;
+  gap: 6px;
+}
+
+.nfc-open-btn {
+  font-size: 0.8em;
+}
+
+.nfc-reset-btn {
+  color: var(--text-error, #e03131);
+}

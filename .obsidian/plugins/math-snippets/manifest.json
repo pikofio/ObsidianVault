@@ -1,0 +1,9 @@
+{
+  "id": "math-snippets",
+  "name": "Math Snippets",
+  "version": "1.4.0",
+  "minAppVersion": "1.0.0",
+  "description": "Type :: to search and insert LaTeX math snippets, auto-wrapped in inline math ($...$) when needed, with Tab-through placeholders. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
+  "author": "warch",
+  "isDesktopOnly": false
+}
