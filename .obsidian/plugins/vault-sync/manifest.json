@@ -1,7 +1,7 @@
 {
   "id": "vault-sync",
   "name": "Vault Sync",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "minAppVersion": "1.0.0",
   "description": "Manual, git-based vault backup/sync: commit snapshots locally and push/pull to any git remote, including a server you run yourself. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
   "author": "warch",

@@ -24,6 +24,7 @@ const DEFAULT_SETTINGS = {
   branch: "main",
   authorName: "",
   authorEmail: "",
+  sshKeyPath: "",
   syncOnSave: false,
   syncOnSaveDelay: 60,
 };
@@ -102,6 +103,27 @@ class VaultSyncSettingTab extends PluginSettingTab {
             await this.plugin.applyRemoteUrl(url);
             this.refreshStatus();
           })
+      );
+
+    new Setting(containerEl)
+      .setName("SSH key path (recommended for SSH remotes)")
+      .setDesc(
+        "Points git directly at a private key file for this repo, e.g. /home/you/.ssh/id_ed25519. Use this if push/pull " +
+          "fails with an SSH/askpass error - it removes the dependency on a system SSH agent being reachable from " +
+          "wherever Obsidian was launched. Only use a key with no passphrase, since there's still no way to prompt " +
+          "for one from here. Leave empty and save to go back to your system default."
+      )
+      .addText((t) => {
+        this.sshKeyInput = t;
+        t.setValue(this.plugin.settings.sshKeyPath).setPlaceholder("/home/you/.ssh/id_ed25519");
+      })
+      .addButton((b) =>
+        b.setButtonText("Save").onClick(async () => {
+          const keyPath = this.sshKeyInput.getValue().trim();
+          this.plugin.settings.sshKeyPath = keyPath;
+          await this.plugin.saveSettings();
+          await this.plugin.applySshKeyPath(keyPath);
+        })
       );
 
     new Setting(containerEl)
@@ -379,6 +401,28 @@ module.exports = class VaultSyncPlugin extends Plugin {
     if (!this.vaultPath || !(await this.isRepo())) return;
     if (this.settings.authorName) await runGit(this.vaultPath, ["config", "user.name", this.settings.authorName]);
     if (this.settings.authorEmail) await runGit(this.vaultPath, ["config", "user.email", this.settings.authorEmail]);
+  }
+
+  // Points git directly at an SSH private key file for this repo (local
+  // config, not global), so push/pull work regardless of whether a system
+  // SSH agent is running or reachable from wherever Obsidian was launched -
+  // that agent dependency is exactly what caused an "askpass" failure here.
+  // Only sensible for a passphrase-less key, since there's still no way to
+  // prompt interactively from this background process.
+  async applySshKeyPath(keyPath) {
+    if (!this.vaultPath || !(await this.isRepo())) {
+      new Notice("Not a git repository yet - run Initialize first");
+      return;
+    }
+    if (!keyPath) {
+      await runGit(this.vaultPath, ["config", "--unset", "core.sshCommand"]);
+      new Notice("SSH key override cleared - using system default again");
+      return;
+    }
+    const sshCmd = `ssh -i ${keyPath} -o IdentitiesOnly=yes`;
+    const res = await runGit(this.vaultPath, ["config", "core.sshCommand", sshCmd]);
+    if (!res.ok) this.reportError("Setting SSH key failed", res);
+    else new Notice("SSH key applied for this repo");
   }
 
   async initRepo() {
