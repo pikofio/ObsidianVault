@@ -1,9 +1,9 @@
 {
   "id": "vault-sync",
   "name": "Vault Sync",
-  "version": "2.0.0",
+  "version": "1.2.0",
   "minAppVersion": "1.0.0",
-  "description": "Manual git-based vault backup/sync: real git CLI on desktop, isomorphic-git (pure JS) on mobile - push/pull/commit against any git remote. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
+  "description": "Manual, git-based vault backup/sync: commit snapshots locally and push/pull to any git remote, including a server you run yourself. Generated entirely by AI (Claude Sonnet 5, Anthropic).",
   "author": "warch",
-  "isDesktopOnly": false
+  "isDesktopOnly": true
 }
